@@ -20,7 +20,7 @@ public class Contador : MonoBehaviour
         recordeMetros = PlayerPrefs.GetInt("RecordeMetros", 0);
         recordeContadorMetros.text = "Recorde: " + recordeMetros + "m";
 
-        recordeSegundos = PlayerPrefs.GetInt("RecordeSegundos", 0f);
+        recordeSegundos = PlayerPrefs.GetFloat("RecordeSegundos", 0f);
         recordeContadorSegundos.text = "Recorde: " + recordeSegundos + "s";
     }
     void Update()
@@ -55,10 +55,11 @@ public class Contador : MonoBehaviour
         if (segundos > recordeSegundos)
         {
             recordeSegundos = segundos;
-            PlayerPrefs.SetInt("RecordeSegundos", recordeSegundos);
+            PlayerPrefs.SetFloat("RecordeSegundos", recordeSegundos);
             PlayerPrefs.Save();
 
             recordeContadorSegundos.text = "Recorde: " + recordeSegundos + "s";
         }
     }
 }
+
