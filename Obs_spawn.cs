@@ -3,7 +3,7 @@ using UnityEngine;
 public class Obs_spawn : MonoBehaviour
 {
     public GameObject obstacle;
-    public float SpawnRate = 5;
+    public float SpawnRate = 2;
     public float timer = 0;
     public float MinPos = -20;
     public float MaxPos = 20;

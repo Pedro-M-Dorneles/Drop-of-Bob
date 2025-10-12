@@ -3,12 +3,9 @@ using UnityEngine;
 public class Colision : MonoBehaviour
 {
     public bool touchPlayer=false;
-    public Upping upping_script;
-
     
     void Start()
     {
-        upping_script = GetComponent<Upping>();
  
     }
 
