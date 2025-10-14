@@ -5,17 +5,18 @@ using UnityEngine.Profiling;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
-public class Contador Final Teste : MonoBehaviour
+public class ContadorFinalTeste : MonoBehaviour
 {
     public float segundos = 0f;
     public int metros = 0;
     public TMP_Text contadorMetros;
     public int recordeMetros = 0;
     public TMP_Text recordeContadorMetros;
+    public Restart restart;
 
     void Start()
     {
-        upping_script = GetComponent<Obs_Move>();
+        restart = GetComponent<Restart>();
         
         recordeMetros = PlayerPrefs.GetInt("RecordeMetros", 0);
         recordeContadorMetros.text = "Recorde: " + recordeMetros + "m";
@@ -26,7 +27,7 @@ public class Contador Final Teste : MonoBehaviour
         metros = Mathf.FloorToInt(segundos * 10);
         contadorMetros.text = "Metros: " + metros + "m";
 
-        if (gameOver = true) 
+        if (restart.gameOver == true) 
         {
             ReiniciarContador();
         }
@@ -42,7 +43,7 @@ public class Contador Final Teste : MonoBehaviour
 
     public void SalvarRecorde()
     {
-        if (gameOver = true && metros > recordeMetros)
+        if (restart.gameOver == true && metros > recordeMetros)
         {
             recordeMetros = metros;
             PlayerPrefs.SetInt("RecordeMetros", recordeMetros);
@@ -52,3 +53,4 @@ public class Contador Final Teste : MonoBehaviour
         }
     }
 }
+
