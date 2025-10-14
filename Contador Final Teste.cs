@@ -5,7 +5,7 @@ using UnityEngine.Profiling;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
-public class ContadorFinalTeste : MonoBehaviour
+public class ContadorFinal : MonoBehaviour
 {
     public float segundos = 0f;
     public int metros = 0;
@@ -53,4 +53,5 @@ public class ContadorFinalTeste : MonoBehaviour
         }
     }
 }
+
 
