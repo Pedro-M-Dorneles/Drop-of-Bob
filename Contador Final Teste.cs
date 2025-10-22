@@ -23,6 +23,7 @@ public class ContadorFinal : MonoBehaviour
     }
     void Update()
     {
+        if (restart != null && restart.gameOver == false)
         segundos += Time.deltaTime;
         metros = Mathf.FloorToInt(segundos * 10);
         contadorMetros.text = "Metros: " + metros + "m";
@@ -52,6 +53,7 @@ public class ContadorFinal : MonoBehaviour
         }
     }
 }
+
 
 
 
