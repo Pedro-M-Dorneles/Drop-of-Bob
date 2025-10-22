@@ -16,7 +16,7 @@ public class ContadorFinal : MonoBehaviour
 
     void Start()
     {
-        restart = GetComponent<Restart>();
+        
         
         recordeMetros = PlayerPrefs.GetInt("RecordeMetros", 0);
         recordeContadorMetros.text = "Recorde: " + recordeMetros + "m";
@@ -53,6 +53,7 @@ public class ContadorFinal : MonoBehaviour
         }
     }
 }
+
 
 
 
