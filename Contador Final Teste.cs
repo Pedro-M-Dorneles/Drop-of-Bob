@@ -29,7 +29,7 @@ public class ContadorFinal : MonoBehaviour
 
         if (restart.gameOver == true) 
         {
-            PararContador();
+            return;
         }
 
     }
@@ -52,6 +52,7 @@ public class ContadorFinal : MonoBehaviour
         }
     }
 }
+
 
 
 
