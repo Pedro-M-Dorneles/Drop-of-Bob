@@ -27,7 +27,7 @@ public class ContadorFinal : MonoBehaviour
         metros = Mathf.FloorToInt(segundos * 10);
         contadorMetros.text = "Metros: " + metros + "m";
 
-        if (restart.gameOver == true) 
+        if (restart != null && restart.gameOver == true) 
         {
             SalvarRecorde();
             return;
@@ -38,7 +38,6 @@ public class ContadorFinal : MonoBehaviour
     public void PararContador()
     {
         contadorMetros.text = "Metros: " + metros + "m";
-        SalvarRecorde();
     }
 
     public void SalvarRecorde()
@@ -53,6 +52,7 @@ public class ContadorFinal : MonoBehaviour
         }
     }
 }
+
 
 
 
