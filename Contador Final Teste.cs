@@ -29,6 +29,7 @@ public class ContadorFinal : MonoBehaviour
 
         if (restart.gameOver == true) 
         {
+            SalvarRecorde();
             return;
         }
 
@@ -52,6 +53,7 @@ public class ContadorFinal : MonoBehaviour
         }
     }
 }
+
 
 
 
