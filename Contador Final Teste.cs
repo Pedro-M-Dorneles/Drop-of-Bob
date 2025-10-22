@@ -37,6 +37,7 @@ public class ContadorFinal : MonoBehaviour
     public void PararContador()
     {
         contadorMetros.text = "Metros: " + metros + "m";
+        SalvarRecorde();
     }
 
     public void SalvarRecorde()
@@ -51,6 +52,7 @@ public class ContadorFinal : MonoBehaviour
         }
     }
 }
+
 
 
 
