@@ -5,7 +5,10 @@ public class Wall_spawner : MonoBehaviour
     public GameObject wallPrefab; // Prefab da parede
     public Transform leftWallParent;
     public Transform rightWallParent;
-    public float speed = 5f;
+    public float speed = 7f;
+
+    //Pegando o script de reiniciar o jogo
+    public Restart restart;
 
     private float wallHeight;
 
@@ -26,9 +29,12 @@ public class Wall_spawner : MonoBehaviour
 
     void MoveWalls(Transform parent)
     {
-        foreach (Transform wall in parent)
+        if (restart.gameOver != true)
         {
-            wall.position += Vector3.up * speed * Time.deltaTime;
+            foreach (Transform wall in parent)
+            {
+                wall.position += Vector3.up * speed * Time.deltaTime;
+            }
         }
 
         // Checa se precisa spawnar novo pedaço
@@ -39,7 +45,7 @@ public class Wall_spawner : MonoBehaviour
         }
     }
 
-    void SpawnWall(Transform parent, float yPos = 10)
+    void SpawnWall(Transform parent, float yPos = 15)
     {
         Vector3 spawnPos = new Vector3(parent.position.x, yPos, 0);
         Instantiate(wallPrefab, spawnPos, Quaternion.identity, parent);

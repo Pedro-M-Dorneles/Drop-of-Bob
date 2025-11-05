@@ -5,7 +5,7 @@ using System.Collections;
 
 public class Upping : MonoBehaviour
 {
-    public float y_vel = 5f;
+    public float y_vel = 7f;
     public Colision colision;
 
 
@@ -21,7 +21,7 @@ public class Upping : MonoBehaviour
 
         movement = movement.normalized * y_vel *Time.deltaTime;
 
-        GameObject[] obstaculos = GameObject.FindGameObjectsWithTag("Obstacle");
+        GameObject[] obstacles = GameObject.FindGameObjectsWithTag("Obstacle");
 
         transform.position += movement;
 
@@ -29,9 +29,9 @@ public class Upping : MonoBehaviour
         // Se houve colisão com o player → ativa gameOver
         if (colision == null || colision.touchPlayer)
         {
-            foreach (GameObject obstaculo in obstaculos)
+            foreach (GameObject obstacle in obstacles)
             {
-                Upping script = obstaculo.GetComponent<Upping>();
+                Upping script = obstacle.GetComponent<Upping>();
                 if (script != null)
                 {
                     script.y_vel = 0f; // Zera velocidade
