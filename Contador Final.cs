@@ -28,29 +28,23 @@ public class ContadorFinal : MonoBehaviour
 
         if (restart != null && restart.gameOver == true) 
         {
-            
+            SalvarRecorde();  
             return;
         }
 
     }
 
-    public void PararContador()
-    {
-        contadorMetros.text = "Metros: " + metros + "m";
-    }
-
     public void SalvarRecorde()
     {
-        if (restart.gameOver == true && metros > recordeMetros)
+        if (metros > recordeMetros)
         {
             recordeMetros = metros;
             PlayerPrefs.SetInt("RecordeMetros", recordeMetros);
             PlayerPrefs.Save();
-
-            recordeContadorMetros.text = "Recorde: " + recordeMetros + "m";
         }
     }
 }
+
 
 
 
