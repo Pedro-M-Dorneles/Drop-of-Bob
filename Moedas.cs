@@ -11,7 +11,8 @@ public class Moedas : MonoBehaviour
     void Start()
     {
         pontuacaoMoedas = PlayerPrefs.GetInt("PontuacaoMoedas", 0);
-        pontuacaoTotalMoedas.text = "Moedas: " + pontuacaoMoedas;
+        pontuacaoTotalMoedas.text = "Moedas: " + moedas;
+
     }
 
     
@@ -24,20 +25,18 @@ public class Moedas : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Destroy(gameObject);
             moedas++;
             PontuacaoMoedas();
+            contadorMoedas.text = "Moedas: " + moedas;
+            Destroy(gameObject);            
         }
     }
 
     public void PontuacaoMoedas()
     {
-        if (moedas > pontuacaoMoedas)
-        {
-            pontuacaoMoedas = moedas;
-            PlayerPrefs.SetInt("PontuacaoMoedas", moedas);
-            PlayerPrefs.Save();
-        }
+        pontuacaoMoedas = moedas;
+        PlayerPrefs.SetInt("PontuacaoMoedas", pontuacaoMoedas);
+        PlayerPrefs.Save();
+
     }
 }
-
