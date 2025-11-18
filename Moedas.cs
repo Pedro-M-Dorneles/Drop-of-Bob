@@ -26,12 +26,13 @@ public class Moedas : MonoBehaviour
         {
             Destroy(gameObject);
             moedas++;
+            PontuacaoMoedas();
         }
     }
 
     public void PontuacaoMoedas()
     {
-        if (metros > recordeMetros)
+        if (moedas > pontuacaoMoedas)
         {
             pontuacaoMoedas = moedas;
             PlayerPrefs.SetInt("PontuacaoMoedas", moedas);
@@ -39,3 +40,4 @@ public class Moedas : MonoBehaviour
         }
     }
 }
+
